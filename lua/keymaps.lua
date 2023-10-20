@@ -8,7 +8,7 @@ vim.api.nvim_set_keymap('n', 'J', ':normal 10j<CR>', {noremap = true})
 vim.api.nvim_set_keymap('n', 'K', ':normal 10k<CR>', {noremap = true})
 
 --AUTOINDENT
-vim.api.nvim_set_keymap('n', '<leader><leader>', 'gg=G\'\'', {noremap = true})
+vim.api.nvim_set_keymap('n', '<leader><leader>', "gg=G''", {noremap = true})
 
 --SOURCE INIT.LUA
 vim.cmd[[nnoremap <leader>e :source ~/.config/nvim/init.lua<CR>]]
