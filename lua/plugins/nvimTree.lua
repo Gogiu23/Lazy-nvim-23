@@ -6,6 +6,7 @@ return {
 		"nvim-tree/nvim-web-devicons",
 	},
 	config = function()
+		vim.cmd([[nnoremap <space> :NvimTreeToggle<CR>]])
 		require("nvim-tree").setup {
 			on_attach = "default",
 			hijack_cursor = false,

@@ -1,5 +1,3 @@
---vim.g.loaded_netrw=1
---vim.g.loaded_netrwPlugin=1
 vim.g.nvim_tree_disable_netrw = 0
 vim.opt.termguicolors=true
 vim.cmd[[let g:ruby_host_prog="/usr/bin/neovim-ruby-host.ruby2.4"]]

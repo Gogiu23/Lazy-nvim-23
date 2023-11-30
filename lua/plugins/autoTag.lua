@@ -1,4 +1,3 @@
-
 return {
 	'windwp/nvim-ts-autotag',
 	event = "Insertenter",
@@ -14,5 +13,4 @@ return {
 			}
 		}
 	end,
-
 }
