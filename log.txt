@@ -1,0 +1,625 @@
+=-==-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=
+Here the direction you are making changes
+
+=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+/Users/giulianodominici/.config/nvim
+
+diff --git a/init.lua b/init.lua
+index a2f1f5a..15695bf 100644
+--- a/init.lua
++++ b/init.lua
+@@ -1,3 +1,2 @@
+ require("config")
+-require('settings')
+-require('keymaps')
++
+diff --git a/lazy-lock.json b/lazy-lock.json
+index f1899b7..cce89e7 100644
+--- a/lazy-lock.json
++++ b/lazy-lock.json
+@@ -1,6 +1,6 @@
+ {
+-  "LuaSnip": { "branch": "master", "commit": "1def35377854535bb3b0f4cc7a33c083cdb12571" },
+-  "aerial.nvim": { "branch": "master", "commit": "88764566f96bf900a64b3dcd6d178cfb69b1c8ce" },
++  "LuaSnip": { "branch": "master", "commit": "954c81b53989097faaff0fabc11c29575288c3e1" },
++  "aerial.nvim": { "branch": "master", "commit": "ef81ab9184385eb2ad4f80344960d9db2c255c49" },
+   "autoclose.nvim": { "branch": "main", "commit": "37e11589aac55b0e8810dc5865f898f9cb36fef6" },
+   "bracey.vim": { "branch": "master", "commit": "4e1a22acc01787814819df1057d039d4ecf357eb" },
+   "bufferline.nvim": { "branch": "main", "commit": "6ecd37e0fa8b156099daedd2191130e083fb1490" },
+@@ -9,31 +9,31 @@
+   "cmp-nvim-lsp": { "branch": "main", "commit": "44b16d11215dce86f253ce0c30949813c0a90765" },
+   "cmp-path": { "branch": "main", "commit": "91ff86cd9c29299a64f968ebb45846c485725f23" },
+   "cmp_luasnip": { "branch": "master", "commit": "05a9ab28b53f71d1aece421ef32fee2cb857a843" },
+-  "dressing.nvim": { "branch": "master", "commit": "fe3071330a0720ce3695ac915820c8134b22d1b0" },
++  "dressing.nvim": { "branch": "master", "commit": "8b7ae53d7f04f33be3439a441db8071c96092d19" },
+   "friendly-snippets": { "branch": "main", "commit": "53d3df271d031c405255e99410628c26a8f0d2b0" },
+   "glance.nvim": { "branch": "master", "commit": "8ed5cf3b3b1231ea696d88c9efd977027429d869" },
+-  "indent-blankline.nvim": { "branch": "master", "commit": "29be0919b91fb59eca9e90690d76014233392bef" },
++  "indent-blankline.nvim": { "branch": "master", "commit": "9a1fe189a5b6a63e89717424c4995e09feae36d7" },
+   "kotlin-vim": { "branch": "master", "commit": "53fe045906df8eeb07cb77b078fc93acda6c90b8" },
+   "lazy.nvim": { "branch": "main", "commit": "96584866b9c5e998cbae300594d0ccfd0c464627" },
+   "lspkind.nvim": { "branch": "master", "commit": "57610d5ab560c073c465d6faf0c19f200cb67e6e" },
+   "lualine.nvim": { "branch": "master", "commit": "2248ef254d0a1488a72041cfb45ca9caada6d994" },
+-  "mason-lspconfig.nvim": { "branch": "main", "commit": "41674c9d50f23cfa3e11f0ca964eb9100c2a8922" },
++  "mason-lspconfig.nvim": { "branch": "main", "commit": "9453e3d6cd2ca45d96e20f343e8f1b927364b630" },
+   "mason.nvim": { "branch": "main", "commit": "41e75af1f578e55ba050c863587cffde3556ffa6" },
+   "nerdcommenter": { "branch": "master", "commit": "da948e160d9f54c2967c7927b9c74c5a68c8dc49" },
+   "nvim-cmp": { "branch": "main", "commit": "0b751f6beef40fd47375eaf53d3057e0bfa317e4" },
+   "nvim-colorizer.lua": { "branch": "master", "commit": "dde3084106a70b9a79d48f426f6d6fec6fd203f7" },
+-  "nvim-lsp-file-operations": { "branch": "master", "commit": "1e0ffa0acc92f88f9f2b68df47ccbe1917653a42" },
+-  "nvim-lspconfig": { "branch": "master", "commit": "39546f730bdff8eccf7cec344cfce694f19ac908" },
+-  "nvim-tree.lua": { "branch": "master", "commit": "05f55c1fd6470b31627655c528245794e3cd4b2c" },
+-  "nvim-treesitter": { "branch": "master", "commit": "8f16c39f5b439bd9540336c4d5da705d180e34b9" },
++  "nvim-lspconfig": { "branch": "master", "commit": "cf3dd4a290084a868fac0e2e876039321d57111c" },
++  "nvim-tree.lua": { "branch": "master", "commit": "7d1760f892951dd6a118dae1d7a1d8df5f029edf" },
++  "nvim-treesitter": { "branch": "master", "commit": "c203884c80ef31b6a3993398734fbe008addcb27" },
+   "nvim-ts-autotag": { "branch": "main", "commit": "6be1192965df35f94b8ea6d323354f7dc7a557e4" },
+   "nvim-web-devicons": { "branch": "master", "commit": "5efb8bd06841f91f97c90e16de85e96d57e9c862" },
+-  "plenary.nvim": { "branch": "master", "commit": "366b0837486f60ae0e7550c15de8ff66d057c4cd" },
++  "plenary.nvim": { "branch": "master", "commit": "55d9fe89e33efd26f532ef20223e5f9430c8b0c0" },
++  "telescope-file-browser.nvim": { "branch": "master", "commit": "8e0543365fe5781c9babea7db89ef06bcff3716d" },
+   "telescope-fzf-native.nvim": { "branch": "main", "commit": "6c921ca12321edaa773e324ef64ea301a1d0da62" },
+   "telescope.nvim": { "branch": "0.1.x", "commit": "d90956833d7c27e73c621a61f20b29fdb7122709" },
+-  "tokyonight.nvim": { "branch": "main", "commit": "f247ee700b569ed43f39320413a13ba9b0aef0db" },
+   "undotree": { "branch": "master", "commit": "36ff7abb6b60980338344982ad4cdf03f7961ecd" },
+   "vim-floaterm": { "branch": "master", "commit": "3f01a623376957437f9376327637491b74719e38" },
+-  "visual_studio_code": { "branch": "master", "commit": "9e0f4f5519fb7c0d9b749e842e0ef3aa0750c7bf" },
+-  "vscode.nvim": { "branch": "main", "commit": "563e3f671543ba14f23ccb57020a428add640d02" }
++  "vim-illuminate": { "branch": "master", "commit": "3bd2ab64b5d63b29e05691e624927e5ebbf0fb86" },
++  "vscode.nvim": { "branch": "main", "commit": "563e3f671543ba14f23ccb57020a428add640d02" },
++  "which-key.nvim": { "branch": "main", "commit": "4433e5ec9a507e5097571ed55c02ea9658fb268a" }
+ }
+\ No newline at end of file
+diff --git a/lua/config/init.lua b/lua/config/init.lua
+index 1164e04..a652e69 100644
+--- a/lua/config/init.lua
++++ b/lua/config/init.lua
+@@ -11,7 +11,30 @@ if not vim.loop.fs_stat(lazypath) then
+ end
+ vim.opt.rtp:prepend(lazypath)
+ 
+-require("lazy").setup({{import = "plugins"}, {import = "plugins.lsp"}},{
++require('config.keymaps')
++require('config.options')
++require('config.autocmds')
++
++local opts = {
++	defaults = {
++		lazy = false,
++	},
++	colorscheme = {
++		"vscode"
++	},
++	rtp = {
++		disabled_plugins = {
++			"gzip",
++			"matchit",
++			"matchparen",
++			"netrw",
++			"netrwPlugin",
++			"tarPlugin",
++			"tohtml",
++			"tutor",
++			"zipPlugin",
++		},
++	},
+ 	icons = {
+ 		cmd = " ",
+ 		config = "",
+@@ -35,17 +58,24 @@ require("lazy").setup({{import = "plugins"}, {import = "plugins.lsp"}},{
+ 			"‒",
+ 		},
+ 	},
+-	colorscheme = { "tokyonight" },
+ 	change_detection = {
+ 		-- automatically check for config file changes and reload the ui
+-		enabled = true,
++		enabled = false,
+ 		notify = false, -- get a notification when changes are found
+ 	},
+ 	checker = {
+ 		-- automatically check for plugin updates
+-		enabled = true,
++		enabled = false,
+ 		concurrency = nil, ---@type number? set to 1 to check for updates very slowly
+ 		notify = false, -- get a notification when new updates are found
+ 		frequency = 3600, -- check for updates every hour
+-	}
++	},
++}
++
++require("lazy").setup({
++	spec = {
++		{import = "plugins"},
++		{import = "plugins.lsp"},
++	},
++	opts
+ })
+diff --git a/lua/keymaps.lua b/lua/keymaps.lua
+deleted file mode 100644
+index 21bde49..0000000
+--- a/lua/keymaps.lua
++++ /dev/null
+@@ -1,25 +0,0 @@
+--- MAPS FOR THE COMMON USE
+-vim.api.nvim_set_keymap('n', '<C-s>', ':w<CR>', {noremap = true}) --save with Ctrl-s
+---MAPS FOR EVOLUTE THE (JKHL) KEYNOTES
+-vim.api.nvim_set_keymap('n', 'L', '<end>', {noremap = true})
+-vim.api.nvim_set_keymap('n', 'H', '<home>', {noremap = true})
+-vim.api.nvim_set_keymap('i', 'jk', '<esc>', {noremap = true})
+-vim.api.nvim_set_keymap('n', 'J', ':normal 10j<CR>', {noremap = true})
+-vim.api.nvim_set_keymap('n', 'K', ':normal 10k<CR>', {noremap = true})
+-
+---AUTOINDENT
+-vim.api.nvim_set_keymap('n', '<leader><leader>', "gg=G''", {noremap = true})
+-
+---SOURCE INIT.LUA
+-vim.cmd[[nnoremap <leader>e :source ~/.config/nvim/init.lua<CR>]]
+---
+-----MOVE VISUAL STRINGS TROUGHT THE SCREEN
+-vim.cmd[[vnoremap <S-j> :m '>+1<CR>gv=gv]]
+-vim.cmd[[vnoremap <S-k> :m '<-2<CR>gv=gv]]
+-
+-local keymap = vim.api.nvim_set_keymap
+-local opts = { noremap = true, silent = true }
+-keymap("i", "<c-j>", "<cmd>lua require'luasnip'.jump(1)<CR>", opts)
+-keymap("s", "<c-j>", "<cmd>lua require'luasnip'.jump(1)<CR>", opts)
+-keymap("i", "<c-k>", "<cmd>lua require'luasnip'.jump(-1)<CR>", opts)
+-keymap("s", "<c-k>", "<cmd>lua require'luasnip'.jump(-1)<CR>", opts)
+diff --git a/lua/plugins/aerial.lua b/lua/plugins/aerial.lua
+index 5efc6be..4189f7b 100644
+--- a/lua/plugins/aerial.lua
++++ b/lua/plugins/aerial.lua
+@@ -1,5 +1,8 @@
+ return {
+ 	'stevearc/aerial.nvim',
++	keys = {
++		{"<leader>a", "<cmd>AerialToggle!<CR>", desc = "Aerial toggle"}
++	},
+ 	opts = {},
+ 	config = function ()
+ 		require("aerial").setup({
+@@ -49,7 +52,7 @@ return {
+ 				-- Jump forwards/backwards with '{' and '}'
+ 				vim.keymap.set("n", "{", "<cmd>AerialPrev<CR>", { buffer = bufnr })
+ 				vim.keymap.set("n", "}", "<cmd>AerialNext<CR>", { buffer = bufnr })
+-				vim.keymap.set("n", "<leader>a", "<cmd>AerialToggle!<CR>")
++				--vim.keymap.set("n", "<leader>a", "<cmd>AerialToggle!<CR>")
+ 			end,
+ 		})
+ 	end,
+diff --git a/lua/plugins/bufferline.lua b/lua/plugins/bufferline.lua
+index 79f7cf1..0861020 100644
+--- a/lua/plugins/bufferline.lua
++++ b/lua/plugins/bufferline.lua
+@@ -5,8 +5,13 @@ return {
+ 		'nvim-tree/nvim-web-devicons',
+ 	},
+ 	config = function()
++		local map = vim.keymap.set
++		map("n", "<C-.>", ":BufferLineCycleNext<CR>", {desc = "nextBuffer"})
++		map("n", "<C-,>", ":BufferLineCyclePrev<CR>", {desc = "nextBuffer"})
++		map("n", "<C-c>", ":bdelete<CR>", {desc = "bufferClose"})
+ 		require("bufferline").setup({
+ 			options = {
++				themable = true,
+ 				hover = {
+ 					enabled = true,
+ 					delay = 200,
+@@ -16,16 +21,24 @@ return {
+ 				close_command = "bdelete %d",
+ 				close_icon = '',
+ 				indicator = {
+-					style = "icon",
++					style = "underline",
+ 					icon = " ",
+ 				},
+ 				left_trunc_marker = "",
+ 				modified_icon = "●",
+-				offsets = { { filetype = "NvimTree", text = "FILE EXPLORER", text_align = "center" } },
++				offsets = {
++					{
++						filetype = "NvimTree",
++						text = "FILE EXPLORER",
++						text_align = "center"
++					}
++				},
+ 				right_mouse_command = "bdelete! %d",
+ 				right_trunc_marker = "",
++				show_buffer_close_icons = true,
+ 				show_close_icon = false,
+ 				show_tab_indicators = true,
++				diagnostic = "nvim_lsp",
+ 			},
+ 			highlights = {
+ 				fill = {
+diff --git a/lua/plugins/colorscheme.lua b/lua/plugins/colorscheme.lua
+index 8d3c6c8..f616d1d 100644
+--- a/lua/plugins/colorscheme.lua
++++ b/lua/plugins/colorscheme.lua
+@@ -1,5 +1,7 @@
+ return {
+ 	'Mofiqul/vscode.nvim',
++	lazy = false,
++	priority = 1000,
+ 	init = function ()
+ 		vim.cmd([[colorscheme vscode]])
+ 		-- Lua:
+diff --git a/lua/plugins/init.lua b/lua/plugins/init.lua
+index 2ce8077..84f3f09 100644
+--- a/lua/plugins/init.lua
++++ b/lua/plugins/init.lua
+@@ -1,4 +1,7 @@
+ return {
++	{
++		'RRethy/vim-illuminate'
++	},
+ 	{
+ 		'mbbill/undotree',
+ 		event = "VeryLazy",
+@@ -12,9 +15,6 @@ return {
+ 	},
+ 	{
+ 		'preservim/nerdcommenter',
+-		keys = {
+-			{ "<C-/>", "<plug>NERDCommenterToggle", desc = "NerdCommenter" },
+-		},
+ 	},
+ 	{
+ 		'turbio/bracey.vim',
+diff --git a/lua/plugins/lsp/lspconfig.lua b/lua/plugins/lsp/lspconfig.lua
+index c5d1dc3..6e08c12 100644
+--- a/lua/plugins/lsp/lspconfig.lua
++++ b/lua/plugins/lsp/lspconfig.lua
+@@ -3,7 +3,10 @@ return {
+ 	event = { "BufReadPre", "BufNewFile" },
+ 	dependencies = {
+ 		"hrsh7th/cmp-nvim-lsp",
+-		{ "antosha417/nvim-lsp-file-operations", config = true },
++		{
++			--"antosha417/nvim-lsp-file-operations",
++			--config = true
++		},
+ 	},
+ 	config = function()
+ 		-- import lspconfig plugin
+@@ -92,20 +95,20 @@ return {
+ 		lspconfig["lua_ls"].setup({
+ 			capabilities = capabilities,
+ 			settings = { -- custom settings for lua
+-				Lua = {
+-					-- make the language server recognize "vim" global
+-					diagnostics = {
+-						globals = { "vim" },
+-					},
+-					workspace = {
+-						-- make language server aware of runtime files
+-						library = {
+-							[vim.fn.expand("$VIMRUNTIME/lua")] = true,
+-							[vim.fn.stdpath("config") .. "/lua"] = true,
+-						},
++			Lua = {
++				-- make the language server recognize "vim" global
++				diagnostics = {
++					globals = { "vim" },
++				},
++				workspace = {
++					-- make language server aware of runtime files
++					library = {
++						[vim.fn.expand("$VIMRUNTIME/lua")] = true,
++						[vim.fn.stdpath("config") .. "/lua"] = true,
+ 					},
+ 				},
+ 			},
+-		})
+-	end,
++		},
++	})
++end,
+ }
+diff --git a/lua/plugins/lsp/mason.lua b/lua/plugins/lsp/mason.lua
+index 3bd2cb0..933d169 100644
+--- a/lua/plugins/lsp/mason.lua
++++ b/lua/plugins/lsp/mason.lua
+@@ -1,5 +1,6 @@
+ return {
+ 	"williamboman/mason.nvim",
++	event = "VeryLazy",
+ 	dependencies = {
+ 		"williamboman/mason-lspconfig.nvim",
+ 	},
+diff --git a/lua/plugins/lualine.lua b/lua/plugins/lualine.lua
+index 006dd02..83d2384 100644
+--- a/lua/plugins/lualine.lua
++++ b/lua/plugins/lualine.lua
+@@ -4,7 +4,6 @@ return {
+ 	config = function()
+ 		require("lualine").setup({
+ 			options = {
+-				--theme = "visual_studio_code",
+ 				theme = "vscode",
+ 				icons_enabled = true,
+ 				component_separators = { left = "", right = "" },
+@@ -15,7 +14,6 @@ return {
+ 					statusline = 100,
+ 				},
+ 			},
+-			--sections = require("visual_studio_code").get_lualine_sections(),
+ 		})
+ 	end,
+ }
+diff --git a/lua/plugins/nvimTree.lua b/lua/plugins/nvimTree.lua
+index aca0389..9bbd929 100644
+--- a/lua/plugins/nvimTree.lua
++++ b/lua/plugins/nvimTree.lua
+@@ -1,12 +1,14 @@
+ return {
+ 	"nvim-tree/nvim-tree.lua",
+ 	version = "*",
+-	lazy = false,
++	--keys = {
++		--{"<space>", ":NvimTreeToggle<CR>", desc = "Nvimtree"}
++	--},
+ 	dependencies = {
+ 		"nvim-tree/nvim-web-devicons",
+ 	},
+ 	config = function()
+-		vim.cmd([[nnoremap <space> :NvimTreeToggle<CR>]])
++		--vim.cmd([[nnoremap <space> :NvimTreeToggle<CR>]])
+ 		require("nvim-tree").setup {
+ 			on_attach = "default",
+ 			hijack_cursor = false,
+diff --git a/lua/plugins/telescope.lua b/lua/plugins/telescope.lua
+index db60452..c179551 100644
+--- a/lua/plugins/telescope.lua
++++ b/lua/plugins/telescope.lua
+@@ -1,21 +1,151 @@
+ return {
+ 	"nvim-telescope/telescope.nvim",
++	event = "VeryLazy",
+ 	branch = "0.1.x",
+ 	dependencies = {
+ 		"nvim-lua/plenary.nvim",
+ 		{"nvim-telescope/telescope-fzf-native.nvim", build = "make"},
+-		"nvim-tree/nvim-web-devicons"
++		"nvim-tree/nvim-web-devicons",
++		"nvim-telescope/telescope-file-browser.nvim",
+ 	},
+ 	config = function()
+ 		local telescope = require("telescope")
+-		local actions = require("telescope.actions")
+-		telescope.setup()
++		--local actions = require("telescope.actions")
++		telescope.setup({
++			defaults = {
++				theme = "center",
++				border = true,
++				sorting_strategy = "ascending",
++				layout_strategy = "flex",
++				layout_config = {
++					prompt_position = "top",
++				},
++				prompt_prefix = "󱎸  ",
++				selection_caret = " ",
++				multi_icon = " ",
++				path_display = {
++					truncate = 3,
++				},
++				initial_mode = "normal",
++				file_ignore_patterns = {'node_modules'},
++				color_devicons = true,
++				mappings = {
++					n = {
++						["q"] = require("telescope.actions").close
++					},
++				},
++			},
++			pickers = {
++				-- Default configuration for builtin pickers goes here:
++				-- picker_name = {
++					--   picker_config_key = value,
++					--   ...
++					-- }
++					-- Now the picker_config_key will be applied every time you call this
++					-- builtin picker
++				},
++				extensions = {
++					-- Your extension configuration goes here:
++					-- extension_name = {
++						--   extension_config_key = value,
++						-- }
++						-- please take a look at the readme of the extension you want to configure
++					},
++				})
++				local TelescopePrompt = {
++					TelescopePromptNormal = {
++						bg = '#f91651',
++					},
++					TelescopePromptBorder = {
++						fg = '#f91651',
++						bg = '#f91651',
++					},
++					TelescopePromptTitle = {
++						fg = 'white',
++						bg = '#f91651',
++					},
++					TelescopePromptPrefix = {
++						fg = 'white',
++						bg = '#f91651',
++					},
++					TelescopePreviewNormal = {
++						fg = 'white',
++						bg = '#17202A',
++					},
++					TelescopePreviewBorder = {
++						fg = '#f91651',
++						bg = '#17202A',
++					},
++					TelescopePreviewHyphen = {
++						fg = 'white',
++						bg = '#17202A',
++					},
++					TelescopePreviewTitle = {
++						fg = 'white',
++						bg = '#f91651',
++						--bg = '#17202A',
++					},
++					--Results Telescope
++					TelescopeResultsClass = {
++						--bg = '#17202A',
++					},
++					TelescopeResultsField = {
++						--bg = '#17202A',
++					},
++					TelescopeResultsComment = {
++						--bg = '#17202A',
++					},
++					TelescopeResultsConstant = {
++						--bg = '#17202A',
++					},
++					TelescopeResultsFunction = {
++						--bg = '#17202A',
++					},
++					TelescopeResultsIdentifier = {
++						--bg = '#17202A',
++					},
++					TelescopeResultsSpecialComment = {
++						--bg = '#17202A',
++					},
+ 
+-		telescope.load_extension("fzf");
+-		local keymap = vim.keymap
+-		keymap.set("n", "<C-f>", "<cmd>Telescope find_files<cr>", {})
+-		keymap.set("n", "<C-g>", "<cmd>Telescope live_grep<cr>", {})
+---		keymap.set("n", "<leader>fb", builtin.buffers, {})
+---		keymap.set("n", "<leader>fh", builtin.help_tags, {})
+-	end
+-}
++					TelescopeResultsTitle = {
++						fg = 'white',
++						--bg = '#f91651',
++					},
++					TelescopeResultsBorder = {
++						fg = '#f91651',
++					},
++					TelescopeResultsNormal = {
++						fg = 'white',
++						--bg = '#17202A',
++					},
++					TelescopeResultsMethod = {
++						fg = 'white',
++						--bg = '#17202A',
++					},
++					TelescopeResultsStruct = {
++						fg = 'white',
++						--bg = '#17202A',
++					},
++					TelescopeResultsOperator = {
++						fg = 'white',
++						--bg = '#17202A',
++					},
++
++					TelescopeResultsVariable = {
++						fg = 'white',
++						--bg = '#17202A',
++					},
++				}
++				for hl, col in pairs(TelescopePrompt) do
++					vim.api.nvim_set_hl(0, hl, col)
++				end
++				telescope.load_extension("fzf");
++				local map = vim.keymap.set
++				map("n", "<C-f>", "<cmd>Telescope find_files<cr>", {desc = "Find files"})
++				map("n", "<C-g>", "<cmd>Telescope live_grep<cr>", {desc = "Live grep"})
++				map("n", "<space>", "<cmd>lua require'telescope'.extensions.file_browser.file_browser{cwd=''}<CR>", {})
++				--		keymap.set("n", "<leader>fb", builtin.buffers, {})
++				--		keymap.set("n", "<leader>fh", builtin.help_tags, {})
++			end
++		}
+diff --git a/lua/plugins/vim-floaterm.lua b/lua/plugins/vim-floaterm.lua
+index 6a12264..7475e3b 100644
+--- a/lua/plugins/vim-floaterm.lua
++++ b/lua/plugins/vim-floaterm.lua
+@@ -1,8 +1,9 @@
+ return {
+ 	'voldikss/vim-floaterm',
+-	event = "VeryLazy",
++	keys = {
++		{"<leader>t", ":FloatermToggle<CR>", desc = "FloatermToggle"},
++	},
+ 	config = function ()
+-		vim.cmd[[nnoremap <leader>t :FloatermToggle<CR>]]
+ 		vim.cmd[[tnoremap <leader>t <C-\><C-n>:FloatermToggle<CR>]]
+ 	end
+ }
+diff --git a/lua/plugins/vscodeTheme.lua b/lua/plugins/vscodeTheme.lua
+deleted file mode 100644
+index 543f852..0000000
+--- a/lua/plugins/vscodeTheme.lua
++++ /dev/null
+@@ -1,45 +0,0 @@
+-return {
+-	"askfiy/visual_studio_code",
+-	priority = 100,
+-	lazy = true,
+-	config = function()
+-		--vim.cmd([[colorscheme visual_studio_code]])
+-		require("visual_studio_code").setup({
+-			-- `dark` or `light`
+-			mode = "dark",
+-			-- Whether to load all color schemes
+-			preset = false,
+-			-- Whether to enable background transparency
+-			transparent = false,
+-			-- Whether to apply the adapted plugin
+-			expands = {
+-				hop = true,
+-				dbui = true,
+-				lazy = true,
+-				aerial = true,
+-				fidget = true,
+-				null_ls = true,
+-				nvim_cmp = true,
+-				gitsigns = true,
+-				which_key = true,
+-				nvim_tree = true,
+-				lspconfig = true,
+-				telescope = true,
+-				bufferline = true,
+-				nvim_navic = true,
+-				nvim_notify = true,
+-				vim_illuminate = true,
+-				nvim_treesitter = true,
+-				nvim_ts_rainbow = true,
+-				nvim_scrollview = true,
+-				nvim_ts_rainbow2 = true,
+-				indent_blankline = true,
+-				vim_visual_multi = true,
+-			},
+-			hooks = {
+-				before = function(conf, colors, utils) end,
+-				after = function(conf, colors, utils) end,
+-			},
+-		})
+-	end,
+-}
+diff --git a/lua/settings.lua b/lua/settings.lua
+deleted file mode 100644
+index 4699c7a..0000000
+--- a/lua/settings.lua
++++ /dev/null
+@@ -1,13 +0,0 @@
+-vim.g.nvim_tree_disable_netrw = 0
+-vim.opt.termguicolors=true
+-vim.cmd[[let g:ruby_host_prog="/usr/bin/neovim-ruby-host.ruby2.4"]]
+-vim.cmd[[set splitright]]
+-vim.cmd[[set splitbelow]]
+-vim.cmd[[set noswapfile]]
+-vim.cmd[[set number]]
+-vim.cmd[[set relativenumber]]
+-vim.cmd[[set tabstop=4]]
+-vim.cmd[[set shiftwidth=4]]
+-vim.cmd[[set scrolloff=5]]
+-vim.cmd[[set scrollopt=ver]]
+-vim.cmd[[set path+=**]]
+

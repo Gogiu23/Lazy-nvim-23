@@ -1,5 +1,8 @@
 return {
 	{
+		'RRethy/vim-illuminate'
+	},
+	{
 		'mbbill/undotree',
 		event = "VeryLazy",
 		config =function ()
@@ -12,9 +15,6 @@ return {
 	},
 	{
 		'preservim/nerdcommenter',
-		keys = {
-			{ "<C-/>", "<plug>NERDCommenterToggle", desc = "NerdCommenter" },
-		},
 	},
 	{
 		'turbio/bracey.vim',

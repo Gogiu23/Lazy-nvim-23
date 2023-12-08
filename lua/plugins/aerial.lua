@@ -1,5 +1,8 @@
 return {
 	'stevearc/aerial.nvim',
+	keys = {
+		{"<leader>a", "<cmd>AerialToggle!<CR>", desc = "Aerial toggle"}
+	},
 	opts = {},
 	config = function ()
 		require("aerial").setup({
@@ -49,7 +52,7 @@ return {
 				-- Jump forwards/backwards with '{' and '}'
 				vim.keymap.set("n", "{", "<cmd>AerialPrev<CR>", { buffer = bufnr })
 				vim.keymap.set("n", "}", "<cmd>AerialNext<CR>", { buffer = bufnr })
-				vim.keymap.set("n", "<leader>a", "<cmd>AerialToggle!<CR>")
+				--vim.keymap.set("n", "<leader>a", "<cmd>AerialToggle!<CR>")
 			end,
 		})
 	end,

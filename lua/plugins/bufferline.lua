@@ -5,8 +5,13 @@ return {
 		'nvim-tree/nvim-web-devicons',
 	},
 	config = function()
+		local map = vim.keymap.set
+		map("n", "<C-.>", ":BufferLineCycleNext<CR>", {desc = "nextBuffer"})
+		map("n", "<C-,>", ":BufferLineCyclePrev<CR>", {desc = "nextBuffer"})
+		map("n", "<C-c>", ":bdelete<CR>", {desc = "bufferClose"})
 		require("bufferline").setup({
 			options = {
+				themable = true,
 				hover = {
 					enabled = true,
 					delay = 200,
@@ -16,16 +21,24 @@ return {
 				close_command = "bdelete %d",
 				close_icon = '',
 				indicator = {
-					style = "icon",
+					style = "underline",
 					icon = " ",
 				},
 				left_trunc_marker = "",
 				modified_icon = "●",
-				offsets = { { filetype = "NvimTree", text = "FILE EXPLORER", text_align = "center" } },
+				offsets = {
+					{
+						filetype = "NvimTree",
+						text = "FILE EXPLORER",
+						text_align = "center"
+					}
+				},
 				right_mouse_command = "bdelete! %d",
 				right_trunc_marker = "",
+				show_buffer_close_icons = true,
 				show_close_icon = false,
 				show_tab_indicators = true,
+				diagnostic = "nvim_lsp",
 			},
 			highlights = {
 				fill = {
