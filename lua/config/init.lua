@@ -1,4 +1,8 @@
+require('config.keymaps')
+require('config.options')
+require('config.autocmds')
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+
 if not vim.loop.fs_stat(lazypath) then
 	vim.fn.system({
 		"git",
@@ -11,16 +15,10 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require('config.keymaps')
-require('config.options')
-require('config.autocmds')
 
 local opts = {
 	defaults = {
 		lazy = false,
-	},
-	colorscheme = {
-		"vscode"
 	},
 	rtp = {
 		disabled_plugins = {

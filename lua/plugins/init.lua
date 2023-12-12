@@ -14,10 +14,16 @@ return {
 		ft = "kt",
 	},
 	{
-		'preservim/nerdcommenter',
-	},
-	{
 		'turbio/bracey.vim',
 		ft = "html",
+	},
+	{
+		'numToStr/Comment.nvim',
+		keys = {
+			{"g", desc = "Comment"},
+		},
+		config = function ()
+			require('Comment').setup({})
+		end
 	},
 }

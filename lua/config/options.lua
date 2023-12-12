@@ -21,11 +21,12 @@ opt.signcolumn = "yes"
 opt.cmdheight = 1
 opt.scrolloff = 10
 opt.completeopt = "menu,menuone,noselect"
+opt.cursorline = true
 
 --Beahviour
 opt.hidden = true
 opt.errorbells = false
-opt.swapfile = true
+opt.swapfile = false
 opt.backup = false
 opt.undodir = vim.fn.expand("~/.vim/undodir")
 opt.undofile = true

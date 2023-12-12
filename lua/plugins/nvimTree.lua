@@ -1,9 +1,9 @@
 return {
 	"nvim-tree/nvim-tree.lua",
 	version = "*",
-	--keys = {
-		--{"<space>", ":NvimTreeToggle<CR>", desc = "Nvimtree"}
-	--},
+	keys = {
+		{"<space>", ":NvimTreeToggle<CR>", desc = "Nvimtree"}
+	},
 	dependencies = {
 		"nvim-tree/nvim-web-devicons",
 	},

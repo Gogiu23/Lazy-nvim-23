@@ -1,7 +1,11 @@
 return {
 	"nvim-telescope/telescope.nvim",
-	event = "VeryLazy",
 	branch = "0.1.x",
+	keys = {
+		{"<leader>f", desc = "Telescope"},
+	},
+	cmd = "Telescope",
+	module = "Telescope",
 	dependencies = {
 		"nvim-lua/plenary.nvim",
 		{"nvim-telescope/telescope-fzf-native.nvim", build = "make"},
@@ -10,7 +14,7 @@ return {
 	},
 	config = function()
 		local telescope = require("telescope")
-		--local actions = require("telescope.actions")
+		local fb_actions = require "telescope._extensions.file_browser.actions"
 		telescope.setup({
 			defaults = {
 				theme = "center",
@@ -31,121 +35,157 @@ return {
 				color_devicons = true,
 				mappings = {
 					n = {
-						["q"] = require("telescope.actions").close
+						["q"] = require("telescope.actions").close,
+						["<up>"] = false,
+						["<Down"] = false,
+						["<Up>"] = require("telescope.actions").cycle_history_prev,
+						["<Down>"] = require("telescope.actions").cycle_history_next
 					},
 				},
 			},
-			pickers = {
-				-- Default configuration for builtin pickers goes here:
-				-- picker_name = {
-					--   picker_config_key = value,
-					--   ...
-					-- }
-					-- Now the picker_config_key will be applied every time you call this
-					-- builtin picker
+			pickers = {},
+			extensions = {
+				file_browser = {
+					theme = "ivy",
+					path = vim.loop.cwd(),
+					cwd = vim.loop.cwd(),
+					cwd_to_path = true,
+					grouped = true,
+					files = true,
+					add_dirs = true,
+					depth = 1,
+					auto_depth = false,
+					select_buffer = false,
+					hidden = { file_browser = true, folder_browser = false },
+					respect_gitignore = vim.fn.executable "fd" == 1,
+					no_ignore = false,
+					follow_symlinks = false,
+					browse_files = require("telescope._extensions.file_browser.finders").browse_files,
+					browse_folders = require("telescope._extensions.file_browser.finders").browse_folders,
+					hide_parent_dir = false,
+					collapse_dirs = false,
+					prompt_path = false,
+					quiet = false,
+					dir_icon = "",
+					dir_icon_hl = "Default",
+					display_stat = { date = true, size = true, mode = true },
+					hijack_netrw = true,
+					use_fd = true,
+					git_status = true,
+					mappings = {
+						["n"] = {
+							["c"] = fb_actions.create,
+							["r"] = fb_actions.rename,
+							["m"] = fb_actions.move,
+							["y"] = fb_actions.copy,
+							["d"] = fb_actions.remove,
+							["o"] = fb_actions.open,
+							["g"] = fb_actions.goto_parent_dir,
+							["e"] = fb_actions.goto_home_dir,
+							["w"] = fb_actions.goto_cwd,
+							["t"] = fb_actions.change_cwd,
+							["f"] = fb_actions.toggle_browser,
+							["h"] = fb_actions.toggle_hidden,
+							["s"] = fb_actions.toggle_all,
+						},
+					},
 				},
-				extensions = {
-					-- Your extension configuration goes here:
-					-- extension_name = {
-						--   extension_config_key = value,
-						-- }
-						-- please take a look at the readme of the extension you want to configure
-					},
-				})
-				local TelescopePrompt = {
-					TelescopePromptNormal = {
-						bg = '#f91651',
-					},
-					TelescopePromptBorder = {
-						fg = '#f91651',
-						bg = '#f91651',
-					},
-					TelescopePromptTitle = {
-						fg = 'white',
-						bg = '#f91651',
-					},
-					TelescopePromptPrefix = {
-						fg = 'white',
-						bg = '#f91651',
-					},
-					TelescopePreviewNormal = {
-						fg = 'white',
-						bg = '#17202A',
-					},
-					TelescopePreviewBorder = {
-						fg = '#f91651',
-						bg = '#17202A',
-					},
-					TelescopePreviewHyphen = {
-						fg = 'white',
-						bg = '#17202A',
-					},
-					TelescopePreviewTitle = {
-						fg = 'white',
-						bg = '#f91651',
-						--bg = '#17202A',
-					},
-					--Results Telescope
-					TelescopeResultsClass = {
-						--bg = '#17202A',
-					},
-					TelescopeResultsField = {
-						--bg = '#17202A',
-					},
-					TelescopeResultsComment = {
-						--bg = '#17202A',
-					},
-					TelescopeResultsConstant = {
-						--bg = '#17202A',
-					},
-					TelescopeResultsFunction = {
-						--bg = '#17202A',
-					},
-					TelescopeResultsIdentifier = {
-						--bg = '#17202A',
-					},
-					TelescopeResultsSpecialComment = {
-						--bg = '#17202A',
-					},
+				fzf = {
+					fuzzy = true,
+					override_generic_sorter = true,
+					override_file_sorter = true,
+					case_mode = "smart_case",
+				},
+			},
+		})
+		local TelescopePrompt = {
+			TelescopePromptNormal = {
+				bg = '#f91651',
+			},
+			TelescopePromptBorder = {
+				fg = '#f91651',
+				bg = '#f91651',
+			},
+			TelescopePromptTitle = {
+				fg = 'white',
+				bg = '#f91651',
+			},
+			TelescopePromptPrefix = {
+				fg = 'white',
+				bg = '#f91651',
+			},
+			TelescopePreviewNormal = {
+				fg = 'white',
+				bg = '#17202A',
+			},
+			TelescopePreviewBorder = {
+				fg = '#f91651',
+				bg = '#17202A',
+			},
+			TelescopePreviewHyphen = {
+				fg = 'white',
+				bg = '#17202A',
+			},
+			TelescopePreviewTitle = {
+				fg = 'white',
+				bg = '#f91651',
+				--bg = '#17202A',
+			},
 
-					TelescopeResultsTitle = {
-						fg = 'white',
-						--bg = '#f91651',
-					},
-					TelescopeResultsBorder = {
-						fg = '#f91651',
-					},
-					TelescopeResultsNormal = {
-						fg = 'white',
-						--bg = '#17202A',
-					},
-					TelescopeResultsMethod = {
-						fg = 'white',
-						--bg = '#17202A',
-					},
-					TelescopeResultsStruct = {
-						fg = 'white',
-						--bg = '#17202A',
-					},
-					TelescopeResultsOperator = {
-						fg = 'white',
-						--bg = '#17202A',
-					},
+			TelescopeResultsTitle = {
+				fg = 'white',
+				--bg = '#f91651',
+			},
+			TelescopeResultsBorder = {
+				fg = '#f91651',
+			},
+			TelescopeResultsNormal = {
+				fg = 'white',
+				--bg = '#17202A',
+			},
+			TelescopeResultsMethod = {
+				fg = 'white',
+				--bg = '#17202A',
+			},
+			TelescopeResultsStruct = {
+				fg = 'white',
+				--bg = '#17202A',
+			},
+			TelescopeResultsOperator = {
+				fg = 'white',
+				--bg = '#17202A',
+			},
 
-					TelescopeResultsVariable = {
-						fg = 'white',
-						--bg = '#17202A',
-					},
-				}
-				for hl, col in pairs(TelescopePrompt) do
-					vim.api.nvim_set_hl(0, hl, col)
-				end
-				telescope.load_extension("fzf");
-				local map = vim.keymap.set
-				map("n", "<C-f>", "<cmd>Telescope find_files<cr>", {desc = "Find files"})
-				map("n", "<C-g>", "<cmd>Telescope live_grep<cr>", {desc = "Live grep"})
-				map("n", "<space>", "<cmd>lua require'telescope'.extensions.file_browser.file_browser{cwd=''}<CR>", {})
-				--		keymap.set("n", "<leader>fb", builtin.buffers, {})
-				--		keymap.set("n", "<leader>fh", builtin.help_tags, {})
-			end
+			TelescopeResultsVariable = {
+				fg = 'white',
+				--bg = '#17202A',
+			},
 		}
+		for hl, col in pairs(TelescopePrompt) do
+			vim.api.nvim_set_hl(0, hl, col)
+		end
+		telescope.load_extension("file_browser")
+		telescope.load_extension("fzf");
+		local keymap = vim.keymap.set
+		local builtin = require("telescope.builtin")
+		local extension = require("telescope")
+		local N = "n"
+		keymap(N, "<leader>ff", "<cmd>Telescope find_files<cr>", {desc = "find files"})
+		keymap(N, "<leader>fc", extension.extensions.file_browser.file_browser, {desc = "File browser"})
+		keymap(N, "<leader>fz", "<cmd>Telescope live_grep<cr>", {desc = "live grep in cwd"})
+		keymap(N, "<leader>fs", builtin.grep_string, {desc = "find string under cursor"})
+		keymap(N, "<leader>fbb", builtin.buffers, {desc = "Buffers"})
+		keymap(N, "<leader>fht", builtin.help_tags, {desc = "tags_helps"})
+		keymap(N, "<leader>fp", builtin.planets, {desc = "Planets"})
+		keymap(N, "<leader>fhi", builtin.command_history, {desc = "command history"})
+		keymap(N, "<leader>fo", builtin.oldfiles, {desc = "oldfiles"})
+		keymap(N, "<leader>ft", builtin.tags, {desc = "search tags(ctags -R)"})
+		keymap(N, "<leader>fm", builtin.man_pages, {desc = "man pages"})
+		keymap(N, "<leader>fbf", builtin.current_buffer_fuzzy_find, {desc = "fz in the current buffer"})
+		keymap(N, "<leader>fbt", builtin.current_buffer_tags, {desc = "fz tags in current buffer"})
+		keymap(N, "<leader>fgc", builtin.git_commits, {desc = "list all commits with diff preview"})
+		keymap(N, "<leader>fgb", builtin.git_bcommits, {desc = "list all buffers commits"})
+		keymap(N, "<leader>fgr", builtin.git_branches, {desc = "list all branches"})
+		keymap(N, "<leader>fgs", builtin.git_status, {desc = "list git status"})
+	end
+}

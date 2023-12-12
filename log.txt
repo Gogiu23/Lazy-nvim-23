@@ -623,3 +623,18 @@ index 4699c7a..0000000
 -vim.cmd[[set scrollopt=ver]]
 -vim.cmd[[set path+=**]]
 
+
+[master 61a20e9] viernes,  8 de diciembre de 2023, 17:11:56 CET
+ 21 files changed, 1021 insertions(+), 150 deletions(-)
+ create mode 100644 log.txt
+ create mode 100644 lua/config/autocmds.lua
+ create mode 100644 lua/config/keymaps.lua
+ create mode 100644 lua/config/options.lua
+ delete mode 100644 lua/keymaps.lua
+ rewrite lua/plugins/telescope.lua (63%)
+ delete mode 100644 lua/plugins/vscodeTheme.lua
+ create mode 100644 lua/plugins/wichKey.lua
+ delete mode 100644 lua/settings.lua
+
+
+=-==-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=

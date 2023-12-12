@@ -30,6 +30,20 @@ return {
 			vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
 		end
 
+		--configure yaml server
+		lspconfig["yamlls"].setup({
+			settings = {
+				yaml = {
+					schemas = {
+						["https://json.schemastore.org/github-workflow.json"] = "/.github/workflows/*",
+						["../path/relative/to/file.yml"] = "/.github/workflows/*",
+						["/path/from/root/of/project"] = "/.github/workflows/*",
+					},
+				},
+			},
+			capabilities = capabilities,
+		})
+
 		-- configure html server
 		lspconfig["html"].setup({
 			capabilities = capabilities,
